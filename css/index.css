@@ -1,31 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 body {
-    background-color: aqua;
+  font-family: 'Roboto Mono';
+  background-color: black;
 }
 #grid{
-    width:100%;
+    width:25%;
     margin:0 auto;
-}
-textarea{
-    resize: none;
-    width:9%;
-    height:auto;
-    padding-top: 2%;
-    font-size:25px;
-    position: relative;
-}
-hr{
-    width:90%;
-    height:1vh;
-    margin:0 auto;
-    background-color:blue;
-    border:0 solid blue;
+    background-color:#fff;
+    padding: 2.5em;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(255,255,255,.57);
+  	-moz-box-shadow: 0px 5px 40px -10px rgba(255,255,255,0.57);
+  	box-shadow: 5px 40px -10px rgba(255,255,255,0.57);
 }
 table{
     border-collapse: collapse;
-    font-family: Calibri,sans-serif;
+    margin: 0 auto;
 }
 colgroup, tbody{
-    border: solid medium;
+    border:  solid medium;
 }
 td{
     border: solid thin;
@@ -34,19 +28,36 @@ td{
     text-align: center;
     padding: 0;
 }
+.clickme {
+	color: #fff !important;
+	background: #2A52BE;
+  font-family: 'Roboto Mono';
+	padding: 1em;
+  margin: 1em;
+	border-radius: 5px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+}
+.clickme:hover {
+	background: #434343;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
+}
+#controls {
+    margin: 1em auto;
+    width : 28%;
+    display:flex;
+    padding: 1em;
+    background-color: #fff;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(255,255,255,0.57);
+  	-moz-box-shadow: 0px 5px 40px -10px rgba(255,255,255,0.57);
+  	box-shadow: 5px 40px -10px rgba(255,255,255,0.57);
+    align-items: center;
+    justify-content: center;
+}
 @media only screen and (min-width: 768px) {
-    body {
-      background-color: lightblue;
-    }
-    #grid{
-        width:70%;
-        margin:0 auto;
-    }
-    textarea{
-        width:9%;
-        height:auto;
-        padding-top: 2%;
-        font-size:25px;
-        position: relative;
-    }
 }

@@ -12,9 +12,11 @@
 <body>
 	<nav></nav>
 	<main>
+		<div id="controls">
+			<h1>Sudoku Solver<h1>
+		</div>
 		<div id="grid">
             <table>
-              <caption>Enter Your Sudoku Here</caption>
               <colgroup><col><col><col></colgroup>
               <colgroup><col><col><col></colgroup>
               <colgroup><col><col><col></colgroup>
@@ -35,9 +37,11 @@
                 </tbody>
             </table>
         </div>
-        <button id="solve_btn" onclick="solveit()">Solve It</button>
-        <button id="clear_btn" onclick="Clearit()">Clear It</button>
-        <button id="generate_btn" onclick="generateit()">Generate Sudoku</button>
+				<div id="controls">
+        <button id="solve_btn" class = "clickme"  onclick="solveit()">Solve It</button>
+        <button id="clear_btn" class = "clickme" onclick="Clearit()">Clear It</button>
+        <button id="generate_btn" class = "clickme" onclick="generateit()">Generate Sudoku</button>
+			</div>
 	</main>
 	<footer></footer>
 </body>
