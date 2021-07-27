@@ -5,7 +5,7 @@ body {
   background-color: black;
 }
 #grid{
-    width:25%;
+    width:85%;
     margin:0 auto;
     background-color:#fff;
     padding: 2.5em;
@@ -17,14 +17,15 @@ body {
 table{
     border-collapse: collapse;
     margin: 0 auto;
+    font-weight: bold;
 }
 colgroup, tbody{
     border:  solid medium;
 }
 td{
     border: solid thin;
-    height: 2.4em;
-    width: 2.4em;
+    height: 6em;
+    width: 6em;
     text-align: center;
     padding: 0;
 }
@@ -33,6 +34,7 @@ td{
 	background: #2A52BE;
   font-family: 'Roboto Mono';
 	padding: 1em;
+  font-size: 1em;
   margin: 1em;
 	border-radius: 5px;
 	display: inline-block;
@@ -48,8 +50,9 @@ td{
 }
 #controls {
     margin: 1em auto;
-    width : 28%;
+    width : 88%;
     display:flex;
+    font-size: 1.5em;
     padding: 1em;
     background-color: #fff;
     border-radius: 20px;
@@ -60,4 +63,16 @@ td{
     justify-content: center;
 }
 @media only screen and (min-width: 768px) {
+  #controls {
+    width: 30%;
+    font-size: 0.8em;
+  }
+  #grid {
+    width: 26%;
+    font-size: 1em;
+  }
+  td{
+    height: 2.8em;
+    width: 2.8em;
+  }
 }
