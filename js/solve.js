@@ -1,4 +1,5 @@
 var nn = 0;
+var state = 1;
 function sleep(ms) {
   return new Promise(
     resolve => setTimeout(resolve, ms)
@@ -37,6 +38,7 @@ function checkBox(rowst, colst, num) {
 function sudokusudoku() {
     for(var i=0;i<9;i++){
         for(var j=0;j<9;j++){
+             // document.getElementById("P"+i+"_"+j+"").style = "background-color:white;color:black;";
              document.getElementById("P"+i+"_"+j+"").innerText=""+sudoku[i][j];
         }
     }
@@ -47,33 +49,40 @@ function checkValid(rowr,colr,numr) {
 }
 
 async function solveSudoku() {
-   var row=0, col=0;
-   var emt=false;
-    for (var rowi = 0; rowi < 9; rowi++)
-      for (var coli = 0; coli < 9; coli++)
-         if (sudoku[rowi][coli] == 0){
-             row=rowi;
-             col=coli;
-             emt=true;
-             break;
-            }
-   if (!emt)
-      return true;
-   for (var num = 1; num <= 9; num++) {
-      if ((!checkRow(row, num) && !checkColumn(col, num) && !checkBox(row - row%3 , col - col%3, num))) {
-        sudoku[row][col] = num;
-        document.getElementById("P"+row+"_"+col+"").innerText=""+sudoku[row][col];
-        await sleep(300);
-        if (await solveSudoku())
-            return true;
-        sudoku[row][col] = 0;
-        document.getElementById("P"+row+"_"+col+"").innerText="";
-        await sleep(300);
-      }
+  var speed = 100 - 95;
+  if(await state==1){
+     var row=0, col=0;
+     var emt=false;
+      for (var rowi = 0; rowi < 9; rowi++)
+        for (var coli = 0; coli < 9; coli++)
+           if (sudoku[rowi][coli] == 0){
+               row=rowi;
+               col=coli;
+               emt=true;
+               break;
+              }
+     if (!emt)
+        return true;
+     for (var num = 1; num <= 9; num++) {
+        if ((!checkRow(row, num) && !checkColumn(col, num) && !checkBox(row - row%3 , col - col%3, num))) {
+          sudoku[row][col] = num;
+          document.getElementById("P"+row+"_"+col+"").innerText=""+sudoku[row][col];
+          document.getElementById("P"+row+"_"+col+"").style = "background-color:#32CD32;color:white;";
+          await sleep(speed);
+          if (await solveSudoku() && state)
+              return true;
+          sudoku[row][col] = 0;
+          document.getElementById("P"+row+"_"+col+"").style = "background-color:red;color:white;";
+          document.getElementById("P"+row+"_"+col+"").innerText="";
+          await sleep(speed);
+          document.getElementById("P"+row+"_"+col+"").style = "background-color:transparent;color:black;";
+        }
+     }
    }
    return false;
 }
-async function solveit(){
+function solveit(){
+  state=1;
     for(var i=0;i<9;i++){
         for(var j=0;j<9;j++){
             var xx = document.getElementById("P"+i+"_"+j+"").innerText;
@@ -89,7 +98,8 @@ async function solveit(){
     if(solveSudoku()==true)
         sudokusudoku();
 }
-async function Clearit(){
+  function Clearit(){
+  state=0;
    var inputElements = document.getElementsByTagName('td');
    for (var i=0; i < inputElements.length; i++) {
      inputElements[i].innerHTML="";
