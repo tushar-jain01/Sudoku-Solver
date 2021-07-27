@@ -15,6 +15,7 @@ body {
   	box-shadow: 5px 40px -10px rgba(255,255,255,0.57);
 }
 table{
+    margin: 0 auto;
     border-collapse: collapse;
 }
 colgroup, tbody{
