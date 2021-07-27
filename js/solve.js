@@ -45,7 +45,8 @@ function sudokusudoku() {
 function checkValid(rowr,colr,numr) {
    return (!checkRow(rowr, numr) && !checkColumn(colr, numr) && !checkBox(rowr - rowr%3 , colr - colr%3, numr));
 }
-function solveSudoku() {
+
+async function solveSudoku() {
    var row=0, col=0;
    var emt=false;
     for (var rowi = 0; rowi < 9; rowi++)
@@ -61,14 +62,18 @@ function solveSudoku() {
    for (var num = 1; num <= 9; num++) {
       if ((!checkRow(row, num) && !checkColumn(col, num) && !checkBox(row - row%3 , col - col%3, num))) {
         sudoku[row][col] = num;
-        if (solveSudoku())
+        document.getElementById("P"+row+"_"+col+"").innerText=""+sudoku[row][col];
+        await sleep(300);
+        if (await solveSudoku())
             return true;
         sudoku[row][col] = 0;
+        document.getElementById("P"+row+"_"+col+"").innerText="";
+        await sleep(300);
       }
    }
    return false;
 }
-function solveit(){
+async function solveit(){
     for(var i=0;i<9;i++){
         for(var j=0;j<9;j++){
             var xx = document.getElementById("P"+i+"_"+j+"").innerText;
@@ -84,7 +89,7 @@ function solveit(){
     if(solveSudoku()==true)
         sudokusudoku();
 }
-function Clearit(){
+async function Clearit(){
    var inputElements = document.getElementsByTagName('td');
    for (var i=0; i < inputElements.length; i++) {
      inputElements[i].innerHTML="";
