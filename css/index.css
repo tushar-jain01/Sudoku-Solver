@@ -16,18 +16,16 @@ body {
 }
 table{
     border-collapse: collapse;
-    margin: 0 auto;
-    font-weight: bold;
 }
 colgroup, tbody{
     border:  solid medium;
 }
 td{
     border: solid thin;
-    height: 6em;
+    height:2em;
     width: 6em;
+    font-size: 2rem;
     text-align: center;
-    padding: 0;
 }
 .clickme {
 	color: #fff !important;
@@ -74,5 +72,6 @@ td{
   td{
     height: 2.8em;
     width: 2.8em;
+    font-size: 1em;
   }
 }
