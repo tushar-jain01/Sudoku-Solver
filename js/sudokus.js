@@ -11011,7 +11011,7 @@ var sudokus = [
             for(var j=0;j<9;j++){
                 if(sudokus[sudokuno][i][j]!=0){
                  document.getElementById("P"+i+"_"+j+"").innerText=""+sudokus[sudokuno][i][j];
-                 document.getElementById("P"+i+"_"+j+"").style="background-color:black;color:white;";
+                 document.getElementById("P"+i+"_"+j+"").style="background-color:#2A52BE;color:white;";
                 }
             }
         }

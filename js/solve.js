@@ -1,4 +1,9 @@
 var nn = 0;
+function sleep(ms) {
+  return new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+}
 var sudoku = [
     [3, 0, 6, 5, 0, 8, 4, 0, 0],
     [5, 2, 0, 0, 0, 0, 0, 0, 0],
@@ -40,7 +45,6 @@ function sudokusudoku() {
 function checkValid(rowr,colr,numr) {
    return (!checkRow(rowr, numr) && !checkColumn(colr, numr) && !checkBox(rowr - rowr%3 , colr - colr%3, numr));
 }
-
 function solveSudoku() {
    var row=0, col=0;
    var emt=false;
@@ -55,32 +59,15 @@ function solveSudoku() {
    if (!emt)
       return true;
    for (var num = 1; num <= 9; num++) {
-      if (checkValid(row, col, num)) {
-         sudoku[row][col] = num;
-         if (solveSudoku())
+      if ((!checkRow(row, num) && !checkColumn(col, num) && !checkBox(row - row%3 , col - col%3, num))) {
+        sudoku[row][col] = num;
+        if (solveSudoku())
             return true;
-         sudoku[row][col] = 0;
+        sudoku[row][col] = 0;
       }
    }
    return false;
 }
-// function createGrid(){
-//     document.getElementById("grid").innerHTML="";
-//     for(var i=0;i<9;i++){
-//         for(var j = 0;j<9;j++){
-//             var textfield=document.createElement("textarea");
-//             //textfield.style="";
-//             textfield.id="P"+nn+"_"+i+"_"+j+"";
-//             document.getElementById("grid").appendChild(textfield);
-//         }
-//         if(i==2 || i==5 || i==8)
-//         {
-//             document.getElementById("grid").innerHTML=document.getElementById("grid").innerHTML+"<hr>";
-//         }
-//     }
-//     //document.getElementById("grid").innerHTML=document.getElementById("grid").innerHTML+"</br><hr style='height:4px;background-color:black; margin:0 auto;'>"
-//     nn++;
-// }
 function solveit(){
     for(var i=0;i<9;i++){
         for(var j=0;j<9;j++){
@@ -92,7 +79,6 @@ function solveit(){
             else{
                 sudoku[i][j]= 0;
             }
-            console.log(sudoku[i][j]);
         }
     }
     if(solveSudoku()==true)
