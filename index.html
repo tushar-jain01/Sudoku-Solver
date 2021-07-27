@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Sudoku Solver|Home</title>
+    <script src="js/solve.js"></script>
+    <script src="js/sudokus.js"></script>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet/scss" href="css/grid.scss"/>
+</head>
+
+<body>
+	<nav></nav>
+	<main>
+		<div id="grid">
+            <table>
+              <caption>Enter Your Sudoku Here</caption>
+              <colgroup><col><col><col></colgroup>
+              <colgroup><col><col><col></colgroup>
+              <colgroup><col><col><col></colgroup>
+                <tbody>
+                    <tr id = "r0"> <td type="text" contenteditable="true" id="P0_0"></td> <td contenteditable="true" id="P0_1"></td><td contenteditable="true" id="P0_2"></td><td contenteditable="true" id="P0_3"></td><td contenteditable="true" id="P0_4"></td><td contenteditable="true" id="P0_5"></td><td contenteditable="true" id="P0_6"></td><td contenteditable="true" id="P0_7"></td><td contenteditable="true" id="P0_8"></td></tr>
+                    <tr id = "r1"> <td contenteditable="true" id="P1_0"></td> <td contenteditable="true" id="P1_1"></td><td contenteditable="true" id="P1_2"></td><td contenteditable="true" id="P1_3"></td><td contenteditable="true" id="P1_4"></td><td contenteditable="true" id="P1_5"></td><td contenteditable="true" id="P1_6"></td><td contenteditable="true" id="P1_7"></td><td contenteditable="true" id="P1_8"></td></tr>
+                    <tr id = "r2"> <td contenteditable="true" id="P2_0"></td> <td contenteditable="true" id="P2_1"></td><td contenteditable="true" id="P2_2"></td><td contenteditable="true" id="P2_3"></td><td contenteditable="true" id="P2_4"></td><td contenteditable="true" id="P2_5"></td><td contenteditable="true" id="P2_6"></td><td contenteditable="true" id="P2_7"></td><td contenteditable="true" id="P2_8"></td></tr>
+                </tbody>
+                <tbody>
+                    <tr id = "r3"> <td contenteditable="true" id="P3_0"></td> <td contenteditable="true" id="P3_1"></td><td contenteditable="true" id="P3_2"></td><td contenteditable="true" id="P3_3"></td><td contenteditable="true" id="P3_4"></td><td contenteditable="true" id="P3_5"></td><td contenteditable="true" id="P3_6"></td><td contenteditable="true" id="P3_7"></td><td contenteditable="true" id="P3_8"></td></tr>
+                    <tr id = "r4"> <td contenteditable="true" id="P4_0"></td> <td contenteditable="true" id="P4_1"></td><td contenteditable="true" id="P4_2"></td><td contenteditable="true" id="P4_3"></td><td contenteditable="true" id="P4_4"></td><td contenteditable="true" id="P4_5"></td><td contenteditable="true" id="P4_6"></td><td contenteditable="true" id="P4_7"></td><td contenteditable="true" id="P4_8"></td></tr>
+                    <tr id = "r5"> <td contenteditable="true" id="P5_0"></td> <td contenteditable="true" id="P5_1"></td><td contenteditable="true" id="P5_2"></td><td contenteditable="true" id="P5_3"></td><td contenteditable="true" id="P5_4"></td><td contenteditable="true" id="P5_5"></td><td contenteditable="true" id="P5_6"></td><td contenteditable="true" id="P5_7"></td><td contenteditable="true" id="P5_8"></td></tr>
+                </tbody>
+                <tbody>
+                    <tr id = "r6"> <td contenteditable="true" id="P6_0"></td> <td contenteditable="true" id="P6_1"></td><td contenteditable="true" id="P6_2"></td><td contenteditable="true" id="P6_3"></td><td contenteditable="true" id="P6_4"></td><td contenteditable="true" id="P6_5"></td><td contenteditable="true" id="P6_6"></td><td contenteditable="true" id="P6_7"></td><td contenteditable="true" id="P6_8"></td></tr>
+                    <tr id = "r7"> <td contenteditable="true" id="P7_0"></td> <td contenteditable="true" id="P7_1"></td><td contenteditable="true" id="P7_2"></td><td contenteditable="true" id="P7_3"></td><td contenteditable="true" id="P7_4"></td><td contenteditable="true" id="P7_5"></td><td contenteditable="true" id="P7_6"></td><td contenteditable="true" id="P7_7"></td><td contenteditable="true" id="P7_8"></td></tr>
+                    <tr id = "r8"> <td contenteditable="true" id="P8_0"></td> <td contenteditable="true" id="P8_1"></td><td contenteditable="true" id="P8_2"></td><td contenteditable="true" id="P8_3"></td><td contenteditable="true" id="P8_4"></td><td contenteditable="true" id="P8_5"></td><td contenteditable="true" id="P8_6"></td><td contenteditable="true" id="P8_7"></td><td contenteditable="true" id="P8_8"></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <button id="solve_btn" onclick="solveit()">Solve It</button>
+        <button id="clear_btn" onclick="Clearit()">Clear It</button>
+        <button id="generate_btn" onclick="generateit()">Generate Sudoku</button>
+	</main>
+	<footer></footer>
+</body>
+
+</html>

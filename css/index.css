@@ -1,0 +1,52 @@
+body {
+    background-color: aqua;
+}
+#grid{
+    width:100%;
+    margin:0 auto;
+}
+textarea{
+    resize: none;
+    width:9%;
+    height:auto;
+    padding-top: 2%;
+    font-size:25px;
+    position: relative;
+}
+hr{
+    width:90%;
+    height:1vh;
+    margin:0 auto;
+    background-color:blue;
+    border:0 solid blue;
+}
+table{
+    border-collapse: collapse;
+    font-family: Calibri,sans-serif;
+}
+colgroup, tbody{
+    border: solid medium;
+}
+td{
+    border: solid thin;
+    height: 2.4em;
+    width: 2.4em;
+    text-align: center;
+    padding: 0;
+}
+@media only screen and (min-width: 768px) {
+    body {
+      background-color: lightblue;
+    }
+    #grid{
+        width:70%;
+        margin:0 auto;
+    }
+    textarea{
+        width:9%;
+        height:auto;
+        padding-top: 2%;
+        font-size:25px;
+        position: relative;
+    }
+}
