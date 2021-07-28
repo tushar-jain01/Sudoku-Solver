@@ -49,7 +49,7 @@ function checkValid(rowr,colr,numr) {
 }
 
 async function solveSudoku() {
-  var speed = 100 - 95;
+  var speed = 100 - 98;
   if(await state==1){
      var row=0, col=0;
      var emt=false;
